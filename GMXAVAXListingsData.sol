@@ -57,7 +57,7 @@ contract GMXListingsData {
        GMXDataOut.TokensToVest = IVester(gmxVester).getCombinedAverageStakedAmount(_Address);
        GMXDataOut.GLPToVest = IVester(glpVester).getCombinedAverageStakedAmount(_Address);
        GMXDataOut.GLPBal = IERC20(stakedGlpTracker).balanceOf(_Address);
-       GMXDataOut.MPsBal = IRewardTracker(feeGmxTracker).depositBalances(_Address, 0x35247165119B69A40edD5304969560D0ef486921);
+       GMXDataOut.MPsBal = IRewardTracker(feeGmxTracker).depositBalances(_Address, 0x8087a341D32D445d9aC8aCc9c14F5781E04A26d2);
        GMXDataOut.PendingAVAXBal = IRewardTracker(feeGmxTracker).claimable(_Address);
        GMXDataOut.PendingesGMXBal = IRewardTracker(stakedGmxTracker).claimable(_Address) + IRewardTracker(stakedGlpTracker).claimable(_Address);
        GMXDataOut.PendingMPsBal = IRewardTracker(bonusGmxTracker).claimable(_Address);
@@ -76,7 +76,7 @@ function GetGMXAccountData(address _Address) external view returns (GMXAccountDa
        GMXAccountDataOut.TokensToVest = IVester(gmxVester).getCombinedAverageStakedAmount(_Address);
        GMXAccountDataOut.GLPToVest = IVester(glpVester).getCombinedAverageStakedAmount(_Address);
        GMXAccountDataOut.GLPBal = IERC20(stakedGlpTracker).balanceOf(_Address);
-       GMXAccountDataOut.MPsBal = IRewardTracker(feeGmxTracker).depositBalances(_Address, 0x35247165119B69A40edD5304969560D0ef486921);
+       GMXAccountDataOut.MPsBal = IRewardTracker(feeGmxTracker).depositBalances(_Address, 0x8087a341D32D445d9aC8aCc9c14F5781E04A26d2);
        GMXAccountDataOut.PendingAVAXBal = IRewardTracker(feeGmxTracker).claimable(_Address);
        GMXAccountDataOut.PendingesGMXBal = IRewardTracker(stakedGmxTracker).claimable(_Address) + IRewardTracker(stakedGlpTracker).claimable(_Address);
        GMXAccountDataOut.PendingMPsBal = IRewardTracker(bonusGmxTracker).claimable(_Address);
